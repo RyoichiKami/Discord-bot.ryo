@@ -61,4 +61,4 @@ client.on(Events.MessageCreate, message => {
     }
 });
 
-client.login("MTEzNzkzNDAxMjc4MzAwNTc2MA.G2ZGMj.25u4gZ6b8_LJyWbByKgl72tl05hK0jc8ldo_OQ");
+client.login("MTEzNzkzNDAxMjc4MzAwNTc2MA.GIUOhc.eAonIdiGtqs23GV3jjs8KP6TEY2Y2zDA8GqVOI");
