@@ -11,10 +11,6 @@ client.on(Events.guildMemberAdd, member => {
     member.guild.channels.cache.get("1138013244213182517").send(`${member.user}が参加しました！`);
 });
 
-client.on(Events.guildMemberAdd, member => {
-    if (member.guild.id !== "1137934839258030180") return; // 指定のサーバー以外では動作しないようにする
-    member.guild.channels.cache.get("1138013244213182517").send(`ようこそ！`);
-});
 
 client.on("guildMemberRemove", member => {
     if (member.guild.id !== "1137934839258030180") return; // 指定のサーバー以外では動作しないようにする
@@ -61,4 +57,12 @@ client.on(Events.MessageCreate, message => {
     }
 });
 
-client.login("MTEzNzkzNDAxMjc4MzAwNTc2MA.GIUOhc.eAonIdiGtqs23GV3jjs8KP6TEY2Y2zDA8GqVOI");
+client.on(Events.MessageCreate, message => {
+    if (message.author.bot) return; // Botには反応しないようにする
+    if (message.guild.id !== "1137934839258030180") return; // 指定のサーバー以外では動作しないようにする
+    if (message.content.includes("黙れ")) {
+        message.channel.send("死ね");
+    }
+});
+
+client.login("MTEzNzkzNDAxMjc4MzAwNTc2MA.G5sP5q.Ob2KD_vgniJ7jLdkSyByUwIL_BXNTNcUZy2FqQ");
