@@ -53,4 +53,12 @@ client.on(Events.MessageCreate, message => {
     }
 });
 
+client.on(Events.MessageCreate, message => {
+    if (message.author.bot) return; // Botには反応しないようにする
+    if (message.guild.id !== "1137934839258030180") return; // 指定のサーバー以外では動作しないようにする
+    if (message.content.includes("ボット")) {
+        message.channel.send("ボットです");
+    }
+});
+
 client.login("MTEzNzkzNDAxMjc4MzAwNTc2MA.G2ZGMj.25u4gZ6b8_LJyWbByKgl72tl05hK0jc8ldo_OQ");
