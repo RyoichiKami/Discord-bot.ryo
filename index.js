@@ -6,9 +6,9 @@ client.once(Events.ClientReady, c => {
 	console.log(`Ready! (${c.user.tag})`); // 起動した時に"Ready!"とBotの名前をコンソールに出力する
 });
 
-client.on(Events.guildMemberAdd, member => {
+client.on("guildMemberRemove", member => {
     if (member.guild.id !== "1137934839258030180") return; // 指定のサーバー以外では動作しないようにする
-    member.guild.channels.cache.get("1138013244213182517").send(`${member.user}が参加しました！`);
+    member.guild.channels.cache.get("1137934839258030180").send(`${member.user}が参加しました！`);
 });
 
 
@@ -28,7 +28,7 @@ client.on(Events.MessageCreate, message => {
 client.on(Events.MessageCreate, message => {
     if (message.author.bot) return; // Botには反応しないようにする
     if (message.guild.id !== "1137934839258030180") return; // 指定のサーバー以外では動作しないようにする
-    if (message.content.includes("おはよう！")) {
+    if (message.content.includes("おはよう")) {
         message.channel.send("おはよう♪");
     }
 });
@@ -65,4 +65,20 @@ client.on(Events.MessageCreate, message => {
     }
 });
 
-client.login("MTEzNzkzNDAxMjc4MzAwNTc2MA.G5sP5q.Ob2KD_vgniJ7jLdkSyByUwIL_BXNTNcUZy2FqQ");
+client.on(Events.MessageCreate, message => {
+    if (message.author.bot) return; // Botには反応しないようにする
+    if (message.guild.id !== "1137934839258030180") return; // 指定のサーバー以外では動作しないようにする
+    if (message.content.includes("こんばんは")) {
+        message.channel.send("寝ろ");
+    }
+});
+
+client.on(Events.MessageCreate, message => {
+    if (message.author.bot) return; // Botには反応しないようにする
+    if (message.guild.id !== "1137934839258030180") return; // 指定のサーバー以外では動作しないようにする
+    if (message.content.includes("悲しい")) {
+        message.channel.send("おつかれw");
+    }
+});
+
+client.login("MTEzNzkzNDAxMjc4MzAwNTc2MA.GNFPkT.vVI3eyKTKniDsjFMXNgvuIeWnZ0rbPMM-oZc1s");
