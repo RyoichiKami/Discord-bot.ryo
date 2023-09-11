@@ -81,4 +81,4 @@ client.on(Events.MessageCreate, message => {
     }
 });
 
-client.login("MTEzNzkzNDAxMjc4MzAwNTc2MA.GNFPkT.vVI3eyKTKniDsjFMXNgvuIeWnZ0rbPMM-oZc1s");
+client.login("");
